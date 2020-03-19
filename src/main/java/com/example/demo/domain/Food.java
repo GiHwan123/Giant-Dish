@@ -11,7 +11,6 @@ import java.util.List;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE )
 @DiscriminatorColumn(name = "Ftype")
 @Getter
-@Setter
 @NoArgsConstructor
 @Embeddable
 public class Food extends BaseTimeEntity{ //builder로 값을 넘겨줘야함.
@@ -32,8 +31,8 @@ public class Food extends BaseTimeEntity{ //builder로 값을 넘겨줘야함.
     private Member member;
 
     @Builder // 값변경.
-    public Food(Long id,String name, int price) {
-        this.id = id;
+    public Food(String name, int price) {
+
         this.name = name;
         this.price = price;
     }

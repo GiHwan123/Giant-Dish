@@ -60,6 +60,10 @@ public class Order extends BaseTimeEntity {
         orderfood.Recive_Order(this);  // orderfood 를 오더에 설정해서 올림.
     }
 
+    public void User_setQuantity(int set){
+        this.stockQuantity = set;
+    }
+
 
     public void SetDelivery(Delivery delivery) {
         this.delivery = delivery;
