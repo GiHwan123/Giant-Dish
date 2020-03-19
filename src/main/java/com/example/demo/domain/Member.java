@@ -5,12 +5,12 @@ import lombok.*;
 
 
 import javax.persistence.*;
-import javax.persistence.criteria.Order;
 import java.util.ArrayList;
 import java.util.*;
 
 @Entity
 @Getter
+
 @NoArgsConstructor
 public class Member extends BaseTimeEntity {
         @Id
@@ -22,13 +22,12 @@ public class Member extends BaseTimeEntity {
         private String name;
 
 
-        //order미완성
-//        @OneToMany(mappedBy = "member", fetch = FetchType.LAZY) //oneToMany ; mappedBy = owner, fetch = 지연로딩
-//        private List<Order> order = new ArrayList<>();  //member, order을 1:n으로 매핑시키고 order값을 가져온다.
+        @OneToMany(mappedBy = "member", fetch = FetchType.LAZY) //oneToMany ; mappedBy = owner, fetch = 지연로딩
+        private List<Order> order = new ArrayList<>();  //member, order을 1:n으로 매핑시키고 order값을 가져온다.
 
-        //Food클래스 미완성
-//        @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
-//        private List<Food> food = new ArrayList<>();
+
+        @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
+        private List<Food> food = new ArrayList<>();
 
 
         @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
