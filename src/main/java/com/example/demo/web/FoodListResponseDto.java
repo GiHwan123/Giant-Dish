@@ -8,7 +8,9 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 
 @Getter
-//사용자에게 주문한 정보를 보여줌.
+
+//음식 목록을 보여준다.
+
 public class FoodListResponseDto {
 
     private Long id;
