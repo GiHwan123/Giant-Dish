@@ -25,9 +25,6 @@ public class Store extends BaseTimeEntity {
     @Column(name = "store_tel")
     private String tel;
 
-    @Column(name = "store_category")
-    private String category;
-
 
     @Column(name = "store_address")
     private String address; //가게주소 입력 변경사항 -> address클래스에서 직접 입력하는 변수명으로 바꿈
