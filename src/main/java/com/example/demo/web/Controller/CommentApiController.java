@@ -18,4 +18,9 @@ public class CommentApiController {
         public Long save(@RequestBody CommentSaveRequestDto requestDto){
             return commentService.save(requestDto);
         }
+
+        @PostMapping("/Chairman/comment") //댓글을 저장함
+        public Long saveChairman(@RequestBody CommentSaveRequestDto requestDto){
+        return commentService.save(requestDto);
+    }
 }
