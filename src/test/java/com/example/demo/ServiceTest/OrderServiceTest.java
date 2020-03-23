@@ -4,7 +4,6 @@ package com.example.demo.ServiceTest;
 import com.example.demo.domain.Address;
 import com.example.demo.domain.Food;
 import com.example.demo.domain.Member;
-import com.example.demo.domain.Order;
 import com.example.demo.repository.FoodRepository;
 import com.example.demo.repository.MemberRepository;
 import com.example.demo.repository.OrderRepository;
@@ -27,7 +26,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
-
 public class OrderServiceTest {
 
     @Autowired

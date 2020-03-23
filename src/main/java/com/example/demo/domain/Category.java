@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Getter
 public class Category extends BaseTimeEntity {
 
     @Id // pk키 사용

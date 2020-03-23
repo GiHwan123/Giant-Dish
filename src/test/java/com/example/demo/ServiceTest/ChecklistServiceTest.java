@@ -7,13 +7,20 @@ import com.example.demo.service.FoodService;
 import com.example.demo.service.MemberService;
 import com.example.demo.service.OrderService;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.InstanceOfAssertFactories.atomicLongFieldUpdater;
 
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@Transactional
 public class ChecklistServiceTest {
     @Autowired
     private EntityManager em;
