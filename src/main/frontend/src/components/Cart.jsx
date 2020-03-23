@@ -15,6 +15,7 @@ class Cart extends Component {
           <Card.Footer>
             {" "}
             <Button variant="dark">주문하기</Button>
+          
           </Card.Footer>
         </Card>
       </Row>
