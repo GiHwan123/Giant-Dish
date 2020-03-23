@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE )
+@Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "Ftype")
 @Getter
 @NoArgsConstructor
@@ -32,9 +32,7 @@ public class Food extends BaseTimeEntity{ //builder로 값을 넘겨줘야함.
 
     @Builder // 값변경.
     public Food(String name, int price) {
-
         this.name = name;
         this.price = price;
     }
-
 }

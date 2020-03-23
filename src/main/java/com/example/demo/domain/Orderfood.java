@@ -62,7 +62,7 @@ public class Orderfood extends BaseTimeEntity {
     }
 
 
-    //총가
+//총가
 
     public int getTotalPrice() {
         return getOrderprice() * getCount()-getDiscount();

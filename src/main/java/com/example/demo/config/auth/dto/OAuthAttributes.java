@@ -1,10 +1,10 @@
 package com.example.demo.config.auth.dto;
 
 //DTO
+import com.example.demo.domain.user.Role;
+import com.example.demo.domain.user.User;
 import lombok.Builder;
 import lombok.Getter;
-import test.testactive.domain.user.Role;
-import test.testactive.domain.user.User;
 
 import java.util.Map;
 

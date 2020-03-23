@@ -111,6 +111,7 @@ public class Order extends BaseTimeEntity {
         return;
     }
 
+
     public void SetCancle_DeliveryStatus(DeliveryStatus status){
         this.status = status;
     }

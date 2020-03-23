@@ -1,6 +1,7 @@
 package com.example.demo.config.auth;
 
 
+import com.example.demo.config.auth.dto.SessionUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;
@@ -8,13 +9,12 @@ import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
-import test.testactive.config.auth.dto.SessionUser;
+
 
 import javax.servlet.http.HttpSession;
 
 @RequiredArgsConstructor
 @Component //?
-
 //HandlerMethodArgumentResolver 컨트롤러 메서드에서 특정 조건에 맞는 파라미터가 있을 때 원하는 값을 바인딩해주는 인터페이스입니다.
 //https://velog.io/@kingcjy/Spring-HandlerMethodArgumentResolver%EC%9D%98-%EC%82%AC%EC%9A%A9%EB%B2%95%EA%B3%BC-%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC
 public class LoginUserArgumentResolver implements HandlerMethodArgumentResolver {

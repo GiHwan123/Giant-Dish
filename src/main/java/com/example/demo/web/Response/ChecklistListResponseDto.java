@@ -1,9 +1,8 @@
-package com.example.demo.web;
+package com.example.demo.web.Response;
 
 import com.example.demo.domain.Address;
 import com.example.demo.domain.Checklist;
 import com.example.demo.domain.DeliveryStatus;
-import com.example.demo.domain.Food;
 
 //본인이 주문한 정보를 보여준다.
 public class ChecklistListResponseDto {
