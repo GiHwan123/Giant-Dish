@@ -17,6 +17,7 @@ class Cart extends Component {
             <Button variant="dark">주문하기</Button>
           </Card.Footer>
         </Card>
+        
       </Row>
     );
   }
