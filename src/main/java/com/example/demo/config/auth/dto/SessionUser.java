@@ -1,7 +1,8 @@
 package com.example.demo.config.auth.dto;
+import com.example.demo.domain.BaseTimeEntity;
+import com.example.demo.domain.user.User;
 import lombok.Getter;
-import test.testactive.domain.BaseTimeEntity;
-import test.testactive.domain.user.User;
+
 
 import java.io.Serializable;
 

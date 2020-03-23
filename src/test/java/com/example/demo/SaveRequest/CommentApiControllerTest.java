@@ -14,6 +14,7 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
@@ -21,8 +22,8 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) //롤백이안됨
+@Rollback(false)
 public class CommentApiControllerTest {
 
     @LocalServerPort
@@ -36,10 +37,12 @@ public class CommentApiControllerTest {
     @Autowired
     private CommentService commentService;
 
-    @After
-    public void tearDown() throws Exception{
-        commentRepository.deleteAll();
-    }
+
+//    @After
+//    public void tearDown() throws Exception{
+//        commentRepository.deleteAll();
+//    }
+//
 
     @Test
     public void comment_등록된다() throws Exception {
@@ -68,8 +71,6 @@ public class CommentApiControllerTest {
 
         List<Comments> all = commentRepository.findAll();
         assertThat(all.get(0).getGuest_comment()).isEqualTo(guest_comment);
-
-
 
     }
 }

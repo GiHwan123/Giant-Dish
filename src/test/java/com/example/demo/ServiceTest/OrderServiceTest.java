@@ -27,7 +27,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
-@Rollback(false)
+
 public class OrderServiceTest {
 
     @Autowired
@@ -52,7 +52,7 @@ public class OrderServiceTest {
 
     //주문적용
     @Test
-    public void inser_test() throws Exception{
+    public void insert_test() throws Exception{
         String name = "현우";
         String street = "서울시";
         String zipcode ="강남구";
@@ -69,9 +69,11 @@ public class OrderServiceTest {
 
 
         Food food = new Food(); //배송량
-        food.setName(Foodname);
-        food.setPrice(price);
-        foodRepository.save(food);
+
+        foodRepository.save(Food.builder()
+            .name(Foodname)
+            .price(price)
+            .build());
         Food foodId = foodRepository.findOne(food.getId());
 
         List<Member> mm = memberRepository.findAll();

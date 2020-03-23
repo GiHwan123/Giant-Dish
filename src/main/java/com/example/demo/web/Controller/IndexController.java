@@ -54,16 +54,12 @@ public class IndexController {
     }
 
 
-    //유저 댓글
+    //  댓글 사이트
     @GetMapping("/posts/Guest/comment")
     public String CommentSaveUser() {
-        return "guest-comment";
+        return "comment";
     }
 
-    @GetMapping("/posts/Chairman/comment")
-    public String CommentSaveChairman() {
-        return "chairman-comment";
-    }
 
 
     //유저댓글을 보여주는 페이지만들기

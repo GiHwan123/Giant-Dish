@@ -7,11 +7,11 @@ package com.example.demo.config.auth;
 4. 로그인 , 로그아웃시 구현체 명시
  */
 
+import com.example.demo.domain.user.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import test.testactive.domain.user.Role;
 
 
 @RequiredArgsConstructor

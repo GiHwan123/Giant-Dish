@@ -1,21 +1,20 @@
-package com.example.demo.web.Request;
+package com.example.demo.web.Response;
 
 import com.example.demo.domain.Comments;
 import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 
-@Getter
-@NoArgsConstructor
-//댓글 저장
-public class CommentSaveRequestDto {
+
+//작성정보를 보여줌
+public class CommentResponseDto {
+    private Long id;
     private String User_comment;
     private String Guest_comment;
 
     @Builder
-    public CommentSaveRequestDto(String User_comment, String Guest_comment) {
-        this.User_comment = User_comment;
-        this.Guest_comment = Guest_comment;
+    public CommentResponseDto(Comments entity) {
+        this.id = entity.getId();
+        this.Guest_comment = entity.getGuest_comment();
+        this.User_comment = entity.getUser_comment();
     }
 
     public Comments toEntity() {

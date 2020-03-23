@@ -43,6 +43,8 @@ public class MemberServiceTest {
                 .address(address)
                 .coupon(천원)
                 .build());
+
+
         List<Member> mm = memberRepository.findAll();
         System.out.println(memberRepository.findOne(mm.get(0).getId()));
         Member member = mm.get(0);
