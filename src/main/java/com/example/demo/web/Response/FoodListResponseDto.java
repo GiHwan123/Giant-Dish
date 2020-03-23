@@ -1,4 +1,4 @@
-package com.example.demo.web;
+package com.example.demo.web.Response;
 
 
 import com.example.demo.domain.Food;
@@ -16,7 +16,6 @@ public class FoodListResponseDto {
     private Long id;
     private String name;
     private int price;
-    private LocalDateTime modifiedDate;
 
     public FoodListResponseDto(Food entity){
         this.id = getId();

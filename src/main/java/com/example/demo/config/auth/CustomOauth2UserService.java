@@ -1,6 +1,10 @@
 package com.example.demo.config.auth;
 
 
+import com.example.demo.config.auth.dto.OAuthAttributes;
+import com.example.demo.config.auth.dto.SessionUser;
+import com.example.demo.domain.user.User;
+import com.example.demo.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -9,10 +13,6 @@ import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
 import org.springframework.security.oauth2.core.user.DefaultOAuth2User;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
-import test.testactive.config.auth.dto.OAuthAttributes;
-import test.testactive.config.auth.dto.SessionUser;
-import test.testactive.domain.user.User;
-import test.testactive.domain.user.UserRepository;
 
 import javax.servlet.http.HttpSession;
 import java.util.Collections;
