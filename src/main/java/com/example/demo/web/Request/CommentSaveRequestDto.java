@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-//댓글 저장
+//댓글 저장  -> comment페이지
 public class CommentSaveRequestDto {
     private String User_comment;
     private String Guest_comment;
@@ -24,4 +24,5 @@ public class CommentSaveRequestDto {
                 .Guest_comment(Guest_comment)
                 .build();
     }
+
 }

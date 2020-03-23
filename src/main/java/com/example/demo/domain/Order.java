@@ -5,7 +5,9 @@ package com.example.demo.domain;
 import com.example.demo.exception.NotEnoughStockException;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Check;
 
 
 import javax.persistence.*;
@@ -16,6 +18,7 @@ import java.util.List;
 @Entity
 @Getter
 @Table(name = "orders")
+@NoArgsConstructor
 public class Order extends BaseTimeEntity {
 
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
@@ -31,6 +34,8 @@ public class Order extends BaseTimeEntity {
     private List<Orderfood> orderfoods = new ArrayList<>();
 
 
+
+
     /*
       엔티티 Cascade는 엔티티의 상태 변화를 전파시키는 옵션
      단방향 혹은 양방향으로 매핑되어 있는 엔티티에 대해 어느 한쪽 엔티티의 상태(생성 혹은 삭제)가 변경되었을 시
@@ -43,10 +48,24 @@ public class Order extends BaseTimeEntity {
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
 
+
+    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
+    private List<Food> food = new ArrayList<>();
+
+
     private int stockQuantity;
+
 
     @Enumerated(EnumType.STRING)
     private DeliveryStatus status;
+
+
+    @Builder
+    public Order(int stockQuantity, DeliveryStatus status) {
+        this.stockQuantity = stockQuantity;
+        this.status = status;
+    }
+
 
 
 
@@ -92,6 +111,7 @@ public class Order extends BaseTimeEntity {
         return order;
     }
 
+    //어디서 이값을 보내줄가?
     public void SetReady_DeliveryStatus(DeliveryStatus status){
         this.status = status;
     }
@@ -127,24 +147,6 @@ public class Order extends BaseTimeEntity {
         }
 
         return totalPrice;
-
-    }
-    /**
-     * 장바구니를 control하는 함수 위의 cancel함수와 차이가있습니다.
-     */
-    public void basket_cancel(int quantity) //+, - 둘다 해당함수 불러옴
-    {
-
-        if (stockQuantity == 1) {
-            throw new NotEnoughStockException("non click sub");
-        }
-        else if (stockQuantity >= 100) {
-            throw new NotEnoughStockException("non click add");
-        }
-
-        this.stockQuantity += quantity; //취소버튼을 누를경우 -1값이 넘어간
-
-        return;
 
     }
 

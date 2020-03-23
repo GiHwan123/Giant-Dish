@@ -7,10 +7,14 @@ import com.example.demo.repository.FoodRepository;
 import com.example.demo.repository.MemberRepository;
 import com.example.demo.repository.OrderRepository;
 import com.example.demo.repository.StoreRepository;
+import com.example.demo.web.Response.FoodListResponseDto;
+import com.example.demo.web.Response.OrderListResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -30,6 +34,8 @@ public class OrderService {
 
     //주문
     @Transactional
+
+
     public Long order(Long memberId, Long foodId, int count) {
 
         //member food의 각각의 엔티티 조회 id로
@@ -66,17 +72,15 @@ public class OrderService {
         //주문 취소 로직
         order.cancel();
     }
+//    @Transactional(readOnly = true)
+//    public List<OrderListResponseDto> findAllDesc(){
+//        return orderRepository.findAll().stream().map(FoodListResponseDto::new).collect(Collectors.toList());
+//
+//    }
 
-    @Transactional
-    public void cancelbasketOrder(Long foodId, Long orderId) {
-
-        Order order = orderRepository.findOne(orderId);
-        Food food = foodRepository.findOne(foodId); //음식이름 ,가격
-        //주문 취소 로직
-
-        order.basket_cancel(order.getStockQuantity());
-    }
 }
+
+
 
 //검색
 //    public List<Order> findOrders(OrderSearch orderSearch) {

@@ -23,7 +23,7 @@ public class FoodService {
     @Transactional(readOnly = true)
     public List<FoodListResponseDto> findAllDesc(){
         return foodRepository.findAll().stream().map(FoodListResponseDto::new).collect(Collectors.toList());
-        //리스트로 반환하는 메소드이다.
+
     }
 
 

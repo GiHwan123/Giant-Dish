@@ -22,7 +22,7 @@ import static org.junit.Assert.fail;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@Transactional
+
 public class MemberServiceTest {
 
     @Autowired

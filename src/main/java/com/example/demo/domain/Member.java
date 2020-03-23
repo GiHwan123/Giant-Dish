@@ -39,6 +39,7 @@ public class Member extends BaseTimeEntity {
         @Enumerated(EnumType.STRING)
         private Coupon coupon;
 
+
         @Builder // 값변경.
         public  Member(String name, Address address, Coupon coupon) {
             this.name = name;

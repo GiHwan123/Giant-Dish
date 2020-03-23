@@ -3,9 +3,13 @@ package com.example.demo.service;
 
 import com.example.demo.domain.*;
 import com.example.demo.repository.*;
+import com.example.demo.web.Response.ChecklistListResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional(readOnly = true)
@@ -29,7 +33,7 @@ public class ChecklistService {
 
         Member member = memberRepository.findOne(memberId);
         Food food = foodRepository.findOne(foodId);
-        Store store = storeRepository.findOne(storeId);
+        Store store = storeRepository.findOne(storeId); //사용자가선택한 가게가 들어갈가?
         Order order = orderRepository.findOne(orderId);
         Delivery delivery = deliveryRepository.findOne(deliveryid);
 
@@ -37,6 +41,11 @@ public class ChecklistService {
         Checklist checklist = Checklist.createchecklist(member,order,food,store,delivery);
         checkRepository.save(checklist);
         return checklist.getId();
+    }
+
+    @Transactional(readOnly = true)
+    public List<ChecklistListResponseDto> findAllDesc(){
+        return checkRepository.findAll().stream().map(ChecklistListResponseDto::new).collect(Collectors.toList());
     }
 
 }

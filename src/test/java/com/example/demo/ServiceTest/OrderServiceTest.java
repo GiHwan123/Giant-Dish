@@ -1,15 +1,14 @@
 package com.example.demo.ServiceTest;
 
 
-import com.example.demo.domain.Address;
-import com.example.demo.domain.Food;
-import com.example.demo.domain.Member;
+import com.example.demo.domain.*;
 import com.example.demo.repository.FoodRepository;
 import com.example.demo.repository.MemberRepository;
 import com.example.demo.repository.OrderRepository;
 import com.example.demo.service.FoodService;
 import com.example.demo.service.MemberService;
 import com.example.demo.service.OrderService;
+import org.aspectj.weaver.ast.Or;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +22,12 @@ import java.util.List;
 import static com.example.demo.domain.Coupon.천원;
 import static org.assertj.core.api.Assertions.assertThat;
 
+
+//주문자 정보와 주문정보를 확인한다.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
+@Rollback(false)
 public class OrderServiceTest {
 
     @Autowired
@@ -75,8 +77,12 @@ public class OrderServiceTest {
         Food foodId = foodRepository.findOne(food.getId());
 
         List<Member> mm = memberRepository.findAll();
+
+        Order order = new Order();
+
         orderService.order(mm.get(0).getId(), foodId.getId(), 3);
 
+//        assertThat(order.).isEqualTo();
     }
 
 }

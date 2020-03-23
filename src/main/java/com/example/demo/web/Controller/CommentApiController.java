@@ -12,20 +12,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @RestController
-public class CommentApiController {
+    public class CommentApiController {
 
-    private final CommentService commentService;
-    private final CommentRepository commentRepository;
-        //아작스통신으로 값을 넘겨줘서 저장.
-        @PostMapping("/Guest/comment") //댓글을 저장함
-        public Long save(@RequestBody CommentSaveRequestDto requestDto){
+        private final CommentService commentService;
+        private final CommentRepository commentRepository;
+            //아작스통신으로 값을 넘겨줘서 저장.
+            @PostMapping("/Guest/comment") //guest 댓글을 저장함
+            public Long save(@RequestBody CommentSaveRequestDto requestDto){
+                return commentService.save(requestDto);
+            }
+
+            @PostMapping("/Chairman/comment") //사장 댓글을 저장함
+            public Long saveChairman(@RequestBody CommentSaveRequestDto requestDto){
             return commentService.save(requestDto);
-        }
+            }
 
-        @PostMapping("/Chairman/comment") //댓글을 저장함
-        public Long saveChairman(@RequestBody CommentSaveRequestDto requestDto){
-        return commentService.save(requestDto);
+
+
     }
-
-
-}

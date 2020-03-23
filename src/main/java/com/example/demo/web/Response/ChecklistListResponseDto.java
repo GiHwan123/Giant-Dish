@@ -4,7 +4,7 @@ import com.example.demo.domain.Address;
 import com.example.demo.domain.Checklist;
 import com.example.demo.domain.DeliveryStatus;
 
-//본인이 주문한 정보를 보여준다.
+//본인이 주문한 정보를 보여준다. ->checklist 페이지
 public class ChecklistListResponseDto {
     private int price;
     private int stock;

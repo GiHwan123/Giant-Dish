@@ -77,4 +77,3 @@ public class Checklist extends BaseTimeEntity {
     public void SetStatus(Delivery delivery) { this.status = delivery.getStatus() ; }
 
 }
-
