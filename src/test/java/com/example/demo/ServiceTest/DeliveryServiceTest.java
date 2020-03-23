@@ -19,7 +19,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
-@Rollback(false)
 public class DeliveryServiceTest {
 
     @Autowired
