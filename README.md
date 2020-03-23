@@ -1,7 +1,6 @@
 # Giant-Dish
 
 Food Web Service
-//test
 
 ## Development Stack
 <br>
