@@ -19,22 +19,42 @@ export default class FoodStore {
 
   @observable
   selectedMenu = [];
-
+  /*
   @action
   putItem = (name, price) => {
     const exist = this.selectedMenu.find(item => item.name === name);
     if (!exist) {
-      this.selectedMenu.push({ name, price, count: 1 });
-      return;
+      this.selectedMenu = [...this.selectedMenu, { name, price, count: 1 }];
+      //this.selectedMenu.push({ name, price, count: 1 });
+      // return;
+    } else {
+      exist.count++;
     }
-    exist.count++;
   };
-
+*/
   @action
   takeItem = name => {
     const item = this.selectedMenu.find(item => item.name === name);
     item.count--;
     if (item.count === 0) this.selectedMenu.remove(item);
+  };
+
+  @action
+  putItem = (name, price) => {
+    if (localStorage.getItem("cart") === null) {
+      localStorage.setItem("cart", JSON.stringify([{ name, price, count: 1 }]));
+    } else {
+      let cart = JSON.parse(localStorage.getItem("cart"));
+      const exist = cart.find(item => item.name === name);
+      if (!exist) {
+        localStorage.setItem(
+          "cart",
+          JSON.stringify([...cart, { name, price, count: 1 }])
+        );
+      } else {
+        exist.count++;
+      }
+    }
   };
 
   @computed
