@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Form, Button, Container, Table } from "react-bootstrap";
+import { Form, Button, Container, Row, Col} from "react-bootstrap";
+import img from "../img/logo.png";
+
 class Myinfo extends Component {
   constructor(props) {
     super(props);
@@ -34,30 +36,57 @@ class Myinfo extends Component {
         <Button variant="secondary">취소</Button>
       </Container>
       ) : ( 
-        <Table striped bordered hover variant="dark">
-          <tbody>
-          <tr>
-            <th>아이디</th>
-            <td>ㅇㅇ</td>
-          </tr>
-          <tr>
-            <th>이메일</th>
-            <td>ㅇㅇ</td>
-          </tr>
-          <tr>
-            <th>프로필</th>
-            <td>ㅇㅇ</td>
-          </tr>
-          <tr>
-            <th>이름</th>
-            <td>ㅇㅇ</td>
-          </tr>
-          <tr>
-            <th>주소</th>
-            <td>ㅇㅇ</td>
-          </tr>
-        </tbody>
-      </Table>
+        <Container>
+          <Row>
+            <div className='My'>
+            <h2>마이페이지</h2>
+            </div>
+          </Row>
+        <Form>
+        <Form.Group as={Row} controlId="formPlaintextEmail">
+          <Col>
+          <div>
+          <img src={img} className='profile'></img>
+          </div>
+          </Col>
+          <Col sm="7">
+          </Col>
+          <Col>
+          
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row} controlId="formPlaintextEmail">
+          <Form.Label column sm="2">
+            아이디
+          </Form.Label>
+          <Col sm="7">
+            <Form.Control plaintext readOnly defaultValue="email@example.com" />
+          </Col>
+          <Col>
+          
+          </Col>
+        </Form.Group>
+      
+        <Form.Group as={Row} controlId="formPlaintextPassword">
+          <Form.Label column sm="2">
+            비밀번호 변경
+          </Form.Label>
+          <Col sm="7">
+            <Form.Control type="password" placeholder="변경할 비밀번호 입력"/>
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row}>
+          <Col sm="2">
+          </Col>
+          <Col sm="7">
+            <Form.Control type="password" placeholder="재입력" />
+          </Col>
+          <Col>
+          <Button>확인</Button>
+          </Col>
+        </Form.Group>
+      </Form>
+      </Container>
       )}
       </>
     );
