@@ -99,7 +99,11 @@ class Header extends Component {
                 <Form.Control type="password" placeholder="Password" />
               </Form.Group>
               <Form.Group controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="자동 로그인" />
+                <Form.Check
+                  type="switch"
+                  id="custom-switch"
+                  label="자동 로그인"
+                />
               </Form.Group>
             </Form>
           </Modal.Body>
