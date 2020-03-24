@@ -54,7 +54,7 @@ public class IndexController {
             model.addAttribute("userEmail", user.getEmail());
             model.addAttribute("userPicture", user.getPicture());
         }
-        model.addAttribute("Order", orderService.findAllDesc()); //food정보를 보여줌
+        model.addAttribute("Order"); //food정보를 보여줌
 
         return "mydata-page";
     }

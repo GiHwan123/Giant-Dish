@@ -46,21 +46,17 @@ public class OrderRepository {
         }
 
         if (StringUtils.hasText(orderSearch.getMemberName())) {
-
             Join<Order, Member> m = o.join("member", JoinType.INNER);
             Predicate name =
                     cb.like(m.<String>get("name"), "%" +
                             orderSearch.getMemberName()
                             + "%");
         }
-
         cq.where(cb.and(criteria.toArray(new Predicate[criteria.size()])));
         TypedQuery<Order> query =
                 em.createQuery(cq).setMaxResults(100);
         return query.getResultList();
-
     }
-
 
 //        public  List<Order> findAll(OrderSearch orderSearch)
 //        {
