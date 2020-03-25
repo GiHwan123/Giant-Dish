@@ -159,33 +159,7 @@ class Header extends Component {
                 <Button variant="outline-secondary">확인</Button>
               </InputGroup.Append>
             </InputGroup>
-            <label>휴대폰 인증</label>
-            <InputGroup className="mb-3">
-              <Form.Control as="select">
-                <option>통신사</option>
-                <option>SKT</option>
-                <option>KT</option>
-                <option>LG U+</option>
-              </Form.Control>
-              <FormControl aria-label="phone" aria-describedby="basic-addon2" />{" "}
-              -{" "}
-              <FormControl aria-label="phone" aria-describedby="basic-addon2" />{" "}
-              -{" "}
-              <FormControl aria-label="phone" aria-describedby="basic-addon2" />
-              <InputGroup.Append>
-                <Button variant="outline-secondary">인증번호 요청</Button>
-              </InputGroup.Append>
-            </InputGroup>
-            <InputGroup className="mb-3">
-              <FormControl
-                placeholder="인증번호 입력"
-                aria-label="authentication"
-                aria-describedby="basic-addon2"
-              />
-              <InputGroup.Append>
-                <Button variant="outline-secondary">인증</Button>
-              </InputGroup.Append>
-            </InputGroup>
+           
           </Modal.Body>
           <Modal.Footer>
             <Button
