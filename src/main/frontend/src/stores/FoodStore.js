@@ -1,6 +1,6 @@
 import { observable, action, computed } from "mobx";
 
-//@Autobind
+//test함
 export default class FoodStore {
   @observable
   categoryList = [
