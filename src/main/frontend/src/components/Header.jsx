@@ -146,7 +146,6 @@ class Header extends Component {
                 <Button variant="outline-secondary">확인</Button>
               </InputGroup.Append>
             </InputGroup>
-
             <InputGroup className="mb-3">
               <FormControl
                 type="password"
@@ -159,7 +158,18 @@ class Header extends Component {
                 <Button variant="outline-secondary">확인</Button>
               </InputGroup.Append>
             </InputGroup>
-           
+            <label>이메일 주소</label>
+            <InputGroup className="mb-3">
+              <FormControl aria-label="ID" aria-describedby="basic-addon2" />
+            </InputGroup>
+            <label>핸드폰 번호</label>
+            <InputGroup className="mb-3">
+              <FormControl aria-label="ID" aria-describedby="basic-addon2" />
+              -
+              <FormControl aria-label="ID" aria-describedby="basic-addon2" />
+              -
+              <FormControl aria-label="ID" aria-describedby="basic-addon2" />
+            </InputGroup>
           </Modal.Body>
           <Modal.Footer>
             <Button
