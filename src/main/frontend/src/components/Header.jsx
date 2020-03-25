@@ -10,7 +10,7 @@ import {
   FormControl
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { TiShoppingCart } from "react-icons/ti";
+
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -73,11 +73,6 @@ class Header extends Component {
               </div>
             </>
           )}
-          <Link to="/cart">
-            <Button variant="outline-light">
-              <TiShoppingCart />
-            </Button>
-          </Link>
         </Navbar>
         <Modal
           show={login}

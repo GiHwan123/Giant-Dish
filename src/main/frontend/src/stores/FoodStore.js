@@ -19,19 +19,7 @@ export default class FoodStore {
 
   @observable
   selectedMenu = [];
-  /*
-  @action
-  putItem = (name, price) => {
-    const exist = this.selectedMenu.find(item => item.name === name);
-    if (!exist) {
-      this.selectedMenu = [...this.selectedMenu, { name, price, count: 1 }];
-      //this.selectedMenu.push({ name, price, count: 1 });
-      // return;
-    } else {
-      exist.count++;
-    }
-  };
-*/
+
   @action
   takeItem = name => {
     const item = this.selectedMenu.find(item => item.name === name);
